@@ -9,12 +9,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.Cleanup;
+import lombok.extern.slf4j.Slf4j;
 import redis.clients.jedis.Jedis;
 
 /**
  * Hello world!
  *
  */
+@Slf4j
 public class App 
 {
     public static void main( String[] args )
@@ -37,14 +39,11 @@ public class App
         	System.out.println(account);
         	
 		} catch (JsonParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.error("", e);
 		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.error("", e);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.error("", e);
 		}
     }
 }

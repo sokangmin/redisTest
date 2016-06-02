@@ -31,10 +31,10 @@ public class App
         mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
         
         try {       	   
-        	JsonNode node = mapper.readTree(data);
-        	String msg = node.get("message").textValue();
+        	//JsonNode node = mapper.readTree(data);
+        	//String msg = node.get("message").textValue();
         	
-        	Account account = mapper.readValue(msg, Account.class);
+        	Account account = mapper.readValue(data, Account.class);
         	
         	System.out.println(account);
         	

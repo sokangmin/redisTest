@@ -46,10 +46,10 @@ public class App_bulk_lambda
     
     public static Account string2Account(String data) {
     	 try {       	   
-         	JsonNode node = mapper.readTree(data);
-         	String msg = node.get("message").textValue();
+         	/*JsonNode node = mapper.readTree(data);
+         	String msg = node.get("message").textValue();*/
          	
-         	Account account = mapper.readValue(msg, Account.class);
+         	Account account = mapper.readValue(data, Account.class);
          	return account;
          	
  		} catch (JsonParseException e) {
